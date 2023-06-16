@@ -13,7 +13,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${clashDisplay.variable} font-clashDisplay bg-soft`}>
         <Header />
-        <main>{children}</main>
+        <main className='px-10'>{children}</main>
       </body>
     </html>
   );
