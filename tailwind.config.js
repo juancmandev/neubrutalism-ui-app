@@ -10,6 +10,16 @@ module.exports = {
       colors: {
         soft: '#f5ebd7',
         pink: '#ff5e8c',
+        softPink: '#f096e3',
+        darkBlue: '#2e66d2',
+        yellow: '#f7cb45',
+        softYellow: '#ffff80',
+        grass: '#4e9e94',
+        purple: '#8a94f8',
+        softPurple: '#cd76ea',
+        sky: '#80ffea',
+        orange: '#ff9580',
+        limon: '#8aff80',
       },
       fontFamily: {
         clashDisplay: 'var(--font-clash-display)',

@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+.notOnView {
+  opacity: 0;
+  filter: blur(1px);
+  transition: all 0.5s;
+}
+
+.onView {
+  opacity: 1;
+  filter: blur(0);
+  transition: all 0.5s;
+}
