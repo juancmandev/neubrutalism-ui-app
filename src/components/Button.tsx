@@ -5,9 +5,11 @@ interface ButtonProps {
 
 export default function Button({ className, children }: ButtonProps) {
   return (
-    <button
-      className={`px-4 py-2 font-semibold text-lg border-2 border-black shadow-sm rounded ${className}`}>
-      {children}
+    <button className='w-max outline-none pt-1 pl-1 button-animation'>
+      <div
+        className={`px-4 py-2 relative font-semibold text-lg border-2 border-black rounded ${className}`}>
+        {children}
+      </div>
     </button>
   );
 }

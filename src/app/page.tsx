@@ -2,12 +2,34 @@
 
 import Block from '@/components/Block';
 import Button from '@/components/Button';
+import Card from '@/components/Card';
 import Image from 'next/image';
 import { InView } from 'react-intersection-observer';
 
+const neubrutalismExamples = [
+  {
+    title: 'Mozilla: The Super-Official Family Tech Agreement',
+    imageSrc: '/firefox_nb.jpg',
+    imageAlt: 'Firefox Neubrutal page example',
+    link: 'https://www.mozilla.org/en-US/firefox/family/',
+  },
+  {
+    title: 'Gumroad',
+    imageSrc: '/gumroad_nb.jpg',
+    imageAlt: 'Gumroad Neubrutal page example',
+    link: 'https://gumroad.com/',
+  },
+  {
+    title: 'Guiacirugiacardiaca.com',
+    imageSrc: '/nb_cirugia.jpg',
+    imageAlt: 'Guiacirugiacardiaca.com Neubrutal page example',
+    link: 'https://guiacirugiacardiaca.com/',
+  },
+];
+
 export default function Home() {
   return (
-    <div className='flex flex-col gap-[100px]'>
+    <div className='flex flex-col gap-[50px] pb-10'>
       <InView threshold={0.5} rootMargin='20px'>
         {({ inView, ref }) => (
           <section
@@ -49,7 +71,7 @@ export default function Home() {
       <InView threshold={1} rootMargin='0px'>
         {({ inView, ref }) => (
           <section className={`${inView ? 'onView' : 'notOnView'}`} ref={ref}>
-            <h4 className='text-5xl md:text-9xl font-semibold'>Traits</h4>
+            <h4 className='text-5xl md:text-7xl font-semibold'>Traits</h4>
           </section>
         )}
       </InView>
@@ -111,20 +133,34 @@ export default function Home() {
               </div>
               <div className='self-center flex gap-5 md:gap-3'>
                 <div className='self-center flex flex-col md:flex-row gap-3'>
-                  <Block className='bg-darkBlue'>N</Block>
-                  <Block className='bg-softPink rotate-12'>E</Block>
-                  <Block className='bg-yellow'>U</Block>
+                  <Block className='w-5 h-5 text-lg bg-darkBlue'>N</Block>
+                  <Block className='w-5 h-5 text-lg bg-softPink rotate-12'>
+                    E
+                  </Block>
+                  <Block className='w-5 h-5 text-lg bg-yellow'>U</Block>
                 </div>
                 <div className='flex flex-col md:flex-row gap-3'>
-                  <Block className='bg-grass rotate-12'>B</Block>
-                  <Block className='bg-purple -rotate-6'>R</Block>
-                  <Block className='bg-sky rotate-2'>U</Block>
-                  <Block className='bg-orange -rotate-12'>T</Block>
-                  <Block className='bg-softYellow'>A</Block>
-                  <Block className='bg-limon rotate-12'>L</Block>
-                  <Block className='bg-pink'>I</Block>
-                  <Block className='bg-grass rotate-12'>S</Block>
-                  <Block className='bg-softPurple -rotate-6'>M</Block>
+                  <Block className='w-5 h-5 text-lg bg-grass rotate-12'>
+                    B
+                  </Block>
+                  <Block className='w-5 h-5 text-lg bg-purple -rotate-6'>
+                    R
+                  </Block>
+                  <Block className='w-5 h-5 text-lg bg-sky rotate-2'>U</Block>
+                  <Block className='w-5 h-5 text-lg bg-orange -rotate-12'>
+                    T
+                  </Block>
+                  <Block className='w-5 h-5 text-lg bg-softYellow'>A</Block>
+                  <Block className='w-5 h-5 text-lg bg-limon rotate-12'>
+                    L
+                  </Block>
+                  <Block className='w-5 h-5 text-lg bg-pink'>I</Block>
+                  <Block className='w-5 h-5 text-lg bg-grass rotate-12'>
+                    S
+                  </Block>
+                  <Block className='w-5 h-5 text-lg bg-softPurple -rotate-6'>
+                    M
+                  </Block>
                 </div>
               </div>
             </div>
@@ -159,6 +195,63 @@ export default function Home() {
           </section>
         )}
       </InView>
+
+      <InView threshold={0.4} rootMargin='0px'>
+        {({ inView, ref }) => (
+          <section
+            ref={ref}
+            className={`min-h-screen ${inView ? 'onView' : 'notOnView'}`}>
+            <h4 className='flex items-center font-semibold text-3xl'>
+              Neu
+              <Block className='ml-1 mr-2 w-7 h-7 bg-pink rotate-6'>B</Block>
+              rutalism examples
+            </h4>
+            <ul className='py-5 flex flex-col lg:flex-row gap-8'>
+              {neubrutalismExamples.map((example) => (
+                <li key={example.title} className='w-max'>
+                  <a
+                    className='group outline-none'
+                    href={example.link}
+                    target='_blank'>
+                    <Card
+                      title={example.title}
+                      imageSrc={example.imageSrc}
+                      imageAlt={example.imageAlt}
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </InView>
+
+      <section className='flex flex-col gap-4'>
+        <h1 className='flex items-center gap-2 text-2xl font-semibold'>
+          <Block className='bg-purple w-7 h-7'>I</Block> want to use it!
+        </h1>
+        <p>
+          Subscribe to the newsletter to get the latest updates about this new
+          and <strong>B</strong>rutal design system!
+        </p>
+        <form className='w-[250px] flex flex-col gap-4'>
+          <section>
+            <input
+              type='text'
+              placeholder='Your name'
+              className='px-4 py-2 text-lg bg-white border-2 border-black focus:border-pink outline-none'
+            />
+          </section>
+          <section>
+            <input
+              type='email'
+              placeholder='Your email'
+              className='px-4 py-2 text-lg bg-white border-2 border-black focus:border-softPurple outline-none'
+            />
+          </section>
+          <Button className='w-full bg-orange'>Subscribe</Button>
+        </form>
+      </section>
     </div>
   );
 }

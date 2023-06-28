@@ -8,6 +8,20 @@
   }
 }
 
+.button-animation:hover div,
+.button-animation:focus-within div {
+  transform: translate(-4px, -4px);
+  transition: 0.14s ease-out;
+  box-shadow: 4px 4px 0px #000;
+}
+
+.button-animation div,
+.button-animation:active div {
+  transform: translate(0, 0);
+  transition: 0.14s ease-out;
+  box-shadow: none;
+}
+
 .notOnView {
   opacity: 0;
   filter: blur(1px);
