@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Block from '@/components/Block';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
@@ -30,6 +31,8 @@ const neubrutalismExamples = [
 ];
 
 export default function Home() {
+  const [submitting, setSubmitting] = useState(false);
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -41,8 +44,29 @@ export default function Home() {
         .email('Invalid email address')
         .required('Your email is required'),
     }),
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async ({ name, email }) => {
+      setSubmitting(true);
+
+      try {
+        const res = await fetch('/api/mailerLite', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, email }),
+        });
+        const data = await res.json();
+
+        if (data.status === 'ok') {
+          alert('You have successfully subscribed!');
+        } else {
+          alert('Error when trying to subscribe...');
+        }
+      } catch (error) {
+        alert('Error when trying to subscribe...');
+      } finally {
+        setSubmitting(false);
+      }
     },
   });
 
@@ -67,7 +91,7 @@ export default function Home() {
                 movement that started in 2016. It is a reaction to the clean and
                 minimalist design that dominated the web in the 2010s.
               </p>
-              <Button className='bg-pink w-max'>Get Started</Button>
+              {/* <Button className='bg-pink w-max'>Get Started</Button> */}
             </div>
 
             <div>
@@ -275,8 +299,11 @@ export default function Home() {
               className='w-full px-4 py-2 text-lg bg-white border-2 border-black focus:border-softPurple outline-none'
             />
           </section>
-          <Button type='submit' className='w-full bg-orange'>
-            Subscribe
+          <Button
+            disabled={submitting}
+            type='submit'
+            className='w-full bg-orange'>
+            {submitting ? 'Subscribing...' : 'Subscribe'}
           </Button>
         </form>
       </section>

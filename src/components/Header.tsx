@@ -5,10 +5,6 @@ const routes = [
     href: '/',
     text: 'Home',
   },
-  {
-    href: '/about',
-    text: 'About',
-  },
 ];
 
 export default function Header() {
@@ -27,9 +23,12 @@ export default function Header() {
             ))}
           </ul>
         </section>
-        <section className='h-full flex items-center px-5 bg-black text-white'>
-          <h1 className='font-bold'>Contribute</h1>
-        </section>
+        <a
+          href=''
+          target='_blank'
+          className='h-full flex font-bold items-center px-5 bg-black text-white'>
+          Contribute
+        </a>
       </nav>
     </header>
   );

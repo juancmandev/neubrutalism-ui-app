@@ -16,7 +16,8 @@
 }
 
 .button-animation div,
-.button-animation:active div {
+.button-animation:active div,
+.button-animation:disabled div {
   transform: translate(0, 0);
   transition: 0.14s ease-out;
   box-shadow: none;
