@@ -5,6 +5,8 @@ import Button from '@/components/Button';
 import Card from '@/components/Card';
 import Image from 'next/image';
 import { InView } from 'react-intersection-observer';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 const neubrutalismExamples = [
   {
@@ -28,8 +30,24 @@ const neubrutalismExamples = [
 ];
 
 export default function Home() {
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required('Your name is required'),
+      email: Yup.string()
+        .email('Invalid email address')
+        .required('Your email is required'),
+    }),
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
+
   return (
-    <div className='flex flex-col gap-[50px] pb-10'>
+    <div className='flex flex-col gap-[24px] pb-10'>
       <InView threshold={0.5} rootMargin='20px'>
         {({ inView, ref }) => (
           <section
@@ -226,7 +244,7 @@ export default function Home() {
         )}
       </InView>
 
-      <section className='flex flex-col gap-4'>
+      <section className='max-w-[340px] flex flex-col gap-4'>
         <h1 className='flex items-center gap-2 text-2xl font-semibold'>
           <Block className='bg-purple w-7 h-7'>I</Block> want to use it!
         </h1>
@@ -234,22 +252,32 @@ export default function Home() {
           Subscribe to the newsletter to get the latest updates about this new
           and <strong>B</strong>rutal design system!
         </p>
-        <form className='w-[250px] flex flex-col gap-4'>
+        <form onSubmit={formik.handleSubmit} className='flex flex-col gap-4'>
           <section>
             <input
+              id='name'
+              required
               type='text'
+              value={formik.values.name}
+              onChange={formik.handleChange}
               placeholder='Your name'
-              className='px-4 py-2 text-lg bg-white border-2 border-black focus:border-pink outline-none'
+              className='w-full px-4 py-2 text-lg bg-white border-2 border-black focus:border-pink outline-none'
             />
           </section>
           <section>
             <input
+              id='email'
+              required
               type='email'
+              value={formik.values.email}
+              onChange={formik.handleChange}
               placeholder='Your email'
-              className='px-4 py-2 text-lg bg-white border-2 border-black focus:border-softPurple outline-none'
+              className='w-full px-4 py-2 text-lg bg-white border-2 border-black focus:border-softPurple outline-none'
             />
           </section>
-          <Button className='w-full bg-orange'>Subscribe</Button>
+          <Button type='submit' className='w-full bg-orange'>
+            Subscribe
+          </Button>
         </form>
       </section>
     </div>
