@@ -174,13 +174,23 @@ export default function Home() {
         </ul>
       </section>
 
+      <section className='flex flex-col gap-4 min-h-[60vh]'>
+        <h2 className='font-semibold text-2xl'>Approach of this project</h2>
+        <p className='max-w-[500px] text-lg'>
+          This project will be a web app where you can preview the components
+          and copy the HTML/JSX code with TailwindCSS classes, instead of
+          installing a npm library.
+        </p>
+        <p className='max-w-[500px] text-lg'>More details in the future.</p>
+      </section>
+
       <section className='max-w-[340px] flex flex-col gap-4'>
         <h1 className='flex items-center gap-2 text-2xl font-semibold'>
           <Block className='bg-purple w-7 h-7'>I</Block> want to use it!
         </h1>
         <p>
           Subscribe to the newsletter to get the latest updates about this new
-          and <strong>B</strong>rutal design system!
+          and Neubrutal design system!
         </p>
         <NewsLetterForm />
       </section>
