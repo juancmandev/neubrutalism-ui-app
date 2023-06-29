@@ -16,7 +16,9 @@ export default function Header() {
           <ul className='flex h-full items-center gap-4'>
             {routes.map((route) => (
               <li key={route.href}>
-                <NextLink className='text-lg' href={route.href}>
+                <NextLink
+                  className='text-lg outline-none hover:underline focus:underline'
+                  href={route.href}>
                   {route.text}
                 </NextLink>
               </li>
@@ -24,9 +26,9 @@ export default function Header() {
           </ul>
         </section>
         <a
-          href=''
+          href='https://github.com/juancmandev/neubrutalism-ui-app'
           target='_blank'
-          className='h-full flex font-bold items-center px-5 bg-black text-white'>
+          className='h-full flex font-bold items-center px-5 border-x-2 border-black transition-colors bg-black text-white hover:bg-white hover:text-black hover:underline outline-none focus:bg-white focus:text-black focus:underline'>
           Contribute
         </a>
       </nav>
