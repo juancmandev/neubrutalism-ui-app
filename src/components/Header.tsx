@@ -28,7 +28,7 @@ export default function Header() {
         <a
           href='https://github.com/juancmandev/neubrutalism-ui-app'
           target='_blank'
-          className='h-full flex font-bold items-center px-5 border-x-2 border-black transition-colors bg-black text-white hover:bg-white hover:text-black hover:underline outline-none focus:bg-white focus:text-black focus:underline'>
+          className='h-full flex font-bold items-center px-5 border-x-2 border-black transition-colors bg-black text-white hover:bg-white hover:text-black hover:underline outline-none focus:bg-white focus:text-black focus:underline active:bg-black active:text-white'>
           Contribute
         </a>
       </nav>
