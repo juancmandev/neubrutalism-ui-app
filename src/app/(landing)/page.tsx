@@ -8,6 +8,34 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   title: 'Neubrutalism UI',
   description: 'Discover a new and brutal design system!',
+  openGraph: {
+    type: 'website',
+    locale: 'en',
+    title: 'Neubrutalism UI',
+    description: 'Discover a new and brutal design system!',
+    images: [
+      {
+        url: '/neubrutalism-ui-banner.png',
+        width: 1200,
+        height: 675,
+        alt:
+          'Neubrutalism UI banner, "Punch your users in their eyes with this Neubrutalist Design System"',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Neubrutalism UI',
+    description: 'Discover a new and brutal design system!',
+    creator: '@juancmandev',
+    images: {
+      width: 1200,
+      height: 675,
+      url: '/neubrutalism-ui-banner.png',
+      alt:
+        'Neubrutalism UI banner, "Punch your users in their eyes with this Neubrutalist Design System"',
+    },
+  },
 };
 
 const neubrutalismExamples = [
