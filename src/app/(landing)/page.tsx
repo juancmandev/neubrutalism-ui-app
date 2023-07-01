@@ -61,11 +61,11 @@ const neubrutalismExamples = [
 
 export default function Home() {
   return (
-    <div className='flex flex-col gap-5 pb-10'>
+    <div className='max-w-[1200px] mx-auto flex flex-col gap-[100px] pb-10'>
       <section
         id='home'
-        className='w-full min-h-[calc(100vh-136px)] py-10 h-full flex flex-col-reverse lg:flex-row gap-6 justify-between items-center'>
-        <div className='flex flex-col justify-center gap-8 max-w-[600px]'>
+        className='w-full min-h-[calc(100vh_-_200px)] py-20 flex flex-col-reverse lg:flex-row gap-6 justify-between items-center'>
+        <div className='flex flex-col gap-8 max-w-[600px] ml-0 mr-auto'>
           <h2 className='mt-2 text-4xl font-bold'>
             Punch your users in their eyes with this{' '}
             <span className='text-pink'>Neubrutalist Design System</span>
@@ -89,6 +89,7 @@ export default function Home() {
             style={{
               width: '100%',
               height: 'auto',
+              zoom: '1.5',
             }}
             src='/speech_dialog.png'
             alt='Speech Dialog image saying "hey!"'
@@ -102,7 +103,7 @@ export default function Home() {
 
       <section
         id='ugli(ish)'
-        className='min-h-[80vh] flex flex-col justify-center'>
+        className='min-h-[60vh] flex flex-col justify-center'>
         <div className='w-full flex flex-col lg:flex-row justify-between gap-2'>
           <div className='max-w-[400px] h-full flex flex-col gap-4 justify-between'>
             <h5 className='text-2xl font-medium'>Ugly(ish)</h5>
@@ -129,7 +130,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='min-h-[80vh] flex flex-col justify-center'>
+      <section className='min-h-[60vh] flex flex-col justify-center'>
         <div className='w-full flex flex-col lg:flex-row justify-between gap-4'>
           <div className='max-w-[400px] h-full flex flex-col gap-4 justify-between'>
             <h5 className='text-2xl font-medium'>Clashing colors</h5>
@@ -162,7 +163,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='min-h-[80vh] flex flex-col justify-center'>
+      <section className='min-h-[60vh] flex flex-col justify-center'>
         <div className='w-full flex flex-col lg:flex-row justify-between gap-4'>
           <div className='max-w-[400px] h-full flex flex-col gap-4 justify-between'>
             <h5 className='text-2xl font-medium'>No gradients</h5>
@@ -184,7 +185,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='min-h-[80vh]'>
+      <section className='min-h-[60vh]'>
         <h4 className='flex items-center font-semibold text-3xl'>
           Neu
           <Block className='ml-1 mr-2 w-7 h-7 bg-pink rotate-6'>B</Block>
